@@ -15,7 +15,7 @@ export EDITOR=subl
 export BUNDLER_EDITOR=subl
 
 # source other files
-source ~/.dotfiles/.bash_prompt
-source ~/.dotfiles/.bash_aliases
-source ~/.dotfiles/.git-completion
-source ~/.dotfiles/.gitaliases
+source ~/.dotfiles/bash_prompt
+source ~/.dotfiles/bash_aliases
+source ~/.dotfiles/git-completion
+source ~/.dotfiles/gitaliases

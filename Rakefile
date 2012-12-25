@@ -6,7 +6,7 @@ task :install do
   overwrite_all = false
   backup_all = false
 
-  linkables = Dir.glob('*/**{.symlink}')
+  linkables = Dir.glob('*{.symlink}')
  
   linkables.each do |link|
     overwrite = false
