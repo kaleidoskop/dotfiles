@@ -9,11 +9,11 @@ fi
 if tput setaf 1 &> /dev/null; then
     tput sgr0
     if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
-      MAGENTA=$(tput setaf 9)
-      ORANGE=$(tput setaf 172)
-      GREEN=$(tput setaf 190)
-      PURPLE=$(tput setaf 141)
-      WHITE=$(tput setaf 256)
+      MAGENTA=$(tput setaf 197)
+      ORANGE=$(tput setaf 75)
+      GREEN=$(tput setaf 77)
+      PURPLE=$(tput setaf 69)
+      WHITE=$(tput setaf 250)
     else
       MAGENTA=$(tput setaf 5)
       ORANGE=$(tput setaf 4)
@@ -40,4 +40,7 @@ parse_git_branch () {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-PS1="\[${BOLD}${PURPLE}\]\u \[$WHITE\]at \[$PURPLE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$MAGENTA\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+PS1="\[${BOLD}${ORANGE}\]\u \[$WHITE\]at \[$PURPLE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$MAGENTA\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+
+export CLICOLOR=TRUE
+export LSCOLORS=exgxcxdxbxfxfxbhbheheh
